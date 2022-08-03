@@ -14,13 +14,17 @@ int main(){
 		cin>>n>>k;
 		string f;
 		cin>>f;
+		int run=k;
 		if(k%2){
 			int i;
 			for(i=0;i<n;i++){
 				if(f[i]=='1')break;
 			}
+			run--;
 			f[i]='0';
-			k--;
+		}
+		for(int i=0;i<run;i++){
+			
 		}
 	}
 	return 0;
