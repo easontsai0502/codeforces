@@ -24,7 +24,7 @@ int main(){
 				if(f[i]=='1')break;
 			}
 			run--;
-			for(int j=0;i<n;i++){
+			for(int j=0;j<n;j++){
 				if(i==j)continue;
 				if(f[j]=='1')f[j]='0';
 				else if(f[j]=='0')f[j]='1';
@@ -43,8 +43,14 @@ int main(){
 				}else{
 					f[n-1]='0';
 				}
+				dolist[n-1]++;
 			}
 		}
+		cout<<f<<"\n";
+		for(int i=0;i<n;i++){
+			cout<<dolist[i]<<" ";
+		}
+		cout<<"\n";
 	}
 	return 0;
 }
