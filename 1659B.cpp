@@ -21,7 +21,11 @@ int main(){
 				if(f[i]=='1')break;
 			}
 			run--;
-			f[i]='0';
+			for(int j=0;i<n;i++){
+				if(i==j)continue;
+				if(f[j]=='1')f[j]='0';
+				else if(f[j]=='0')f[j]='1';
+			}
 		}
 		for(int i=0;i<run;i++){
 			
