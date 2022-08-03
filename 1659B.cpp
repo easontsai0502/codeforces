@@ -19,6 +19,8 @@ int main(){
 			for(i=0;i<n;i++){
 				if(f[i]=='1')break;
 			}
+			f[i]='0';
+			k--;
 		}
 	}
 	return 0;
