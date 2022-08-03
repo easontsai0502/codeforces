@@ -31,21 +31,23 @@ int main(){
 			}
 			dolist[i]++;
 		}
-		for(int i=0;i<run;i++){
+		while(run--){
 			auto a=f.find('0');
 			if(a!=string::npos){
 				dolist[a]++;
 				f[a]='1';
 			}else{
-				f[n-1]++;
-				if(f[n-1]=='0'){
-					f[n-1]='1';
-				}else{
-					f[n-1]='0';
-				}
-				dolist[n-1]++;
+				break;
 			}
 		}
+		run++;
+		if(run%2){
+			f[n-1]='0';
+		}
+		dolist[n-1]+=run;
+
+
+		/*out*/
 		cout<<f<<"\n";
 		for(int i=0;i<n;i++){
 			cout<<dolist[i]<<" ";
