@@ -1,5 +1,5 @@
 #include<iostream>
-#incldue<cmath>
+#include<cmath>
 #include<vector>
 #include<algorithm>
 using namespace std;
@@ -32,7 +32,12 @@ int main(){
 			dolist[i]++;
 		}
 		for(int i=0;i<run;i++){
-			
+			auto a=f.find('0');
+			if(a!=string::npos){
+				dolist[a]++;
+				f[a]='1';
+			}else{
+			}
 		}
 	}
 	return 0;
