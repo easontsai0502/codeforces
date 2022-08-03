@@ -1,4 +1,6 @@
 #include<iostream>
+#incldue<cmath>
+#include<vector>
 #include<algorithm>
 using namespace std;
 #define ulli unsigned long long int
@@ -15,6 +17,7 @@ int main(){
 		string f;
 		cin>>f;
 		int run=k;
+		vector<int> dolist(n,0);
 		if(k%2){
 			int i;
 			for(i=0;i<n;i++){
@@ -26,6 +29,7 @@ int main(){
 				if(f[j]=='1')f[j]='0';
 				else if(f[j]=='0')f[j]='1';
 			}
+			dolist[i]++;
 		}
 		for(int i=0;i<run;i++){
 			
