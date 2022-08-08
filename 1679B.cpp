@@ -27,20 +27,21 @@ int main(){
         t--;
         if(t){
             cin>>bigdo;
-            tot=bigdo*x;
+            tot=bigdo*n;
             a.clear();
         }else{
             ulli i,x;
             cin>>i>>x;
+            i--;
             tot+=x;
-            if(a.find(i)!=a.end()){
-                tot-=map[i];
+            if(a.count(i)){
+                tot-=a[i];
             }else{
                 tot-=bigdo;
             }
-            map[i]=x;
+            a[i]=x;
         }
-        cout<<tot;
+        cout<<tot<<"\n";
     }
 	return 0;
 }
