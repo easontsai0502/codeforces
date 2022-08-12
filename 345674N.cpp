@@ -9,7 +9,7 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-int pss(int a,int b){/*猜拳答案機*/
+int pss(int a,int b){/*猜拳結果機*/
 	/*
 	[a,b]
 	1=剪刀
@@ -18,7 +18,7 @@ int pss(int a,int b){/*猜拳答案機*/
 	[return]
 	-1=a輸
 	1=a贏
-	2=a平
+	0=a平
 	*/
 	/*a=1*/
 	if(a==1){
@@ -37,6 +37,32 @@ int pss(int a,int b){/*猜拳答案機*/
 		if(b==1)return -1;
 		if(b==2)return 1;
 		if(b==3)return 0;
+	}
+}
+int pss(int a,int re){/*猜拳製造機*/
+	/*
+	[a,return]
+	1=剪刀
+	2=石頭
+	3=不～
+	[re]
+	-1=a輸
+	1=a贏
+	0=a平
+	*/
+	/*a=1*/
+	if(re==1){
+		if(a==1)return 3;
+		if(a==2)return 1;
+		if(a==3)return 2;
+	}
+	if(re==-1){
+		if(a==1)return 2;
+		if(a==2)return 3;
+		if(a==3)return 1;
+	}
+	if(re==0){
+		return a;
 	}
 }
 int main(){
