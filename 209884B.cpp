@@ -72,6 +72,8 @@ int main(){
 		for(int i=0;i<needtodo;i++){
 			int nowx=(worklist.front()).first;
 			int nowy=(worklist.front()).second;
+			solve(nowx,nowy);
+			worklist.pop_front();
 		}
 	}
 	return 0;
