@@ -17,44 +17,46 @@ int numlist[1001][1001];
 map<pii,pii> come;
 deque<pii> worklist;
 void solve(int x=0,int y=0){
-	if(true){
-		int backx=come[{x,y}].first;
-		int backy=come[{x,y}].second;
-		int nownum=numlist[x][y];
-		int backnum=numlist[backx][backy];
-		if((x || y) && !come.count({x,y})){
-			bool bs;	/*bs=true:下一個數值要比較小，反之*/
-			if(backnum>nownum){
-				bs=false;
-			}else{
-				bs=true;
-			}
-			if(x-1>=0 && x-1!=backx){
-				if(numlist[x-1][y]>nownum ^ bs){
-					worklist.push_back({x-1,y});
-				}
-			}
-			if(y-1>=0 && y-1!=backy){
-				if(numlist[x-1][y]>nownum ^ bs){
-					worklist.push_back({x,y-1});
-				}
-			}
-			if(x+1<n && x+1!=backx){
-				if(numlist[x-1][y]>nownum ^ bs){
-					worklist.push_back({x+1,y});
-				}
-			}
-			if(y+1<n && y+1!=backy){
-				if(numlist[x-1][y]>nownum ^ bs){
-					worklist.push_back({x,y+1});
-				}
-			}
+	int backx=come[{x,y}].first;
+	int backy=come[{x,y}].second;
+	int nownum=numlist[x][y];
+	int backnum=numlist[backx][backy];
+	if((x || y)){
+		bool bs;	/*bs=true:下一個數值要比較小，反之*/
+		if(backnum>nownum){
+			bs=false;
 		}else{
-			worklist.push_back({x+1,y});
-			worklist.push_back({x,y+1});
-			come[{x+1,y}]={0,0};
-			come[{x,y+1}]={0,0};
+			bs=true;
 		}
+		if(x-1>=0 && x-1!=backx){
+			if(numlist[x-1][y]>nownum ^ bs){
+				worklist.push_back({x-1,y});
+				come[{x-1,y}]={x,y};
+			}
+		}
+		if(y-1>=0 && y-1!=backy){
+			if(numlist[x-1][y]>nownum ^ bs){
+				worklist.push_back({x,y-1});
+				come[{x,y-1}]={x,y};
+			}
+		}
+		if(x+1<n && x+1!=backx){
+			if(numlist[x-1][y]>nownum ^ bs){
+				worklist.push_back({x+1,y});
+				come[{x+1,y}]={x,y};
+			}
+		}
+		if(y+1<n && y+1!=backy){
+			if(numlist[x-1][y]>nownum ^ bs){
+				worklist.push_back({x,y+1});
+				come[{x,y+1}]={x,y};
+			}
+		}
+	}else{
+		worklist.push_back({x+1,y});
+		worklist.push_back({x,y+1});
+		come[{x+1,y}]={0,0};
+		come[{x,y+1}]={0,0};
 	}
 }
 int main(){
@@ -71,6 +73,9 @@ int main(){
 	bool issolve=false;
 	solve(0,0);
 	for(int i=0;i<n*n;i++){
+		if(issolve){
+			break;
+		}
 		ans++;
 		int needtodo=worklist.size();
 		while(needtodo--){
