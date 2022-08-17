@@ -12,7 +12,7 @@ using namespace std;
 #define lli long long int
 #define pii pair<int,int>
 int chentoi[100001];
-map<int,vector<int> > inin;
+map<lli,vector<lli> > inin;
 map<pii,int> wl;
 int psscount[4];
 int pssr(int a,int b){/*猜拳結果機*/
@@ -78,13 +78,13 @@ void debuger(int x,int y,int z){
 	cout<<y<<','<<z<<"\n";
 }
 int floorcount;
-bool solve(int p,int ou){
+bool solve(lli p,int ou){
 	floorcount++;
 	chentoi[p]=ou;
 	//debuger(floorcount,p,ou);
 	psscount[ou]++;
 	bool re=true;
-	for(int i:inin[p]){
+	for(lli i:inin[p]){
 		if(re){
 			if(chentoi[i]){
 				if(pssr(chentoi[p],chentoi[i])!=wl[{p,i}]){
@@ -106,11 +106,11 @@ int main(){
 	cout.tie(0);
 	ios::sync_with_stdio(false);
 	floorcount=0;
-    int n,m;
+    lli n,m;
 	cin>>n>>m;
 	bool cansolve=true;
 	while(m--){
-		int a,b,c;
+		lli a,b,c;
 		cin>>a>>b>>c;
 		a--;
 		b--;
@@ -125,7 +125,7 @@ int main(){
 		wl[{a,b}]=c;
 		wl[{b,a}]=-c;
 	}
-	for(int i=0;i<n && cansolve;i++){
+	for(lli i=0;i<n && cansolve;i++){
 		if(chentoi[i]){
 			continue;
 		}else{
