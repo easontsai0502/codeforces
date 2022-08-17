@@ -71,17 +71,17 @@ int pss(int a,int re){/*猜拳製造機*/
 		return a;
 	}
 }
-void debuger(int x,auto y,auto z){
+void debuger(int x,int y,int z){
     for(int i=0;i<x;i++){
         cout<<' ';
     }
 	cout<<y<<','<<z<<"\n";
 }
-int floor;
+int floorcount;
 bool solve(int p,int ou){
-	floor++;
+	floorcount++;
 	chentoi[p]=ou;
-	debuger(floor,p,ou)
+	debuger(floorcount,p,ou);
 	psscount[ou]++;
 	bool re=true;
 	for(int i:inin[p]){
@@ -98,20 +98,22 @@ bool solve(int p,int ou){
 			break;
 		}
 	}
-	floor--;
+	floorcount--;
 	return re;
 }
 int main(){
 	cin.tie(0);
 	cout.tie(0);
 	ios::sync_with_stdio(false);
-	floor=0
+	floorcount=0;
     int n,m;
 	cin>>n>>m;
 	bool cansolve=true;
 	while(m--){
 		int a,b,c;
 		cin>>a>>b>>c;
+		a--;
+		b--;
 		if(count(inin[a].begin(),inin[a].end(),b)){
 			if(wl[{a,b}]!=c){
 				cansolve=false;
