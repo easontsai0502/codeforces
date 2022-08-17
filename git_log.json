@@ -1,96 +1,98 @@
-"gitname":"codeforces",
-[
-	{"name":"main",
-		"verson_tree":[
-			{"time":"08-02-2022-18:27",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"git create",
-				"name":"codeforces"
-			},
-			{"time":"08-02-2022-18:27",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"files add",
-				"add":[
-					"./1501B.cpp",
-					"./1538G.cpp",
-					"./1609B.cpp",
-					"./1610C.cpp",
-					"./1703G.cpp",
-					"./340173h.cpp",
-					"./342784A.cpp",
-					"./342784B.cpp",
-					"./342784C.cpp",
-					"./342784D.cpp",
-					"./342784E.cpp",
-					"./369768A - 6.cpp",
-					"./369768F.cpp",
-					"./369768I - 7.cpp",
-					"./369768I - 7_2.cpp",
-					"./369768L - 2.cpp",
-					"./369768P.cpp",
-					"./369768Q-2.cpp",
-					"./369768Q.cpp",
-					"./375463E.cpp",
-					"./391774a.cpp",
-					"./391774b.cpp",
-					"./391774c.cpp",
-					"./391774d.cpp",
-					"./391774e.cpp",
-					"./391774F.cpp",
-					"./391774F_0_1.cpp",
-					"./391774J.cpp",
-					"./git_log.json"
-				],
-				"remove":[],
-				"edit":[],
-				"other_thing":"",
-				"other_branch":[]
-			},
-			{"time":"08-04-2022-16:54",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"files add",
-				"add":[
-					"./345674A.cpp",
-					"./345674A-2.cpp"
-				],
-				"remove":[],
-				"edit":[],
-				"other_thing":"",
-				"other_branch":[]
-			},
-			{"time":"08-08-2022-08:38",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"files edit",
-				"add":[
-					"./1679B.cpp"
-				],
-				"remove":[],
-				"edit":[],
-				"other_thing":"",
-				"other_branch":[]
-			},
-			{"time":"08-12-2022-16:48",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"files edit",
-				"add":[
-					"./345674N.cpp"
-				],
-				"remove":[],
-				"edit":[],
-				"other_thing":"",
-				"other_branch":[]
-			},
-			{"time":"08-17-2022-08:49",
-				"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
-				"do":"files edit",
-				"add":[
-					"./209884B.cpp"
-				],
-				"remove":[],
-				"edit":[],
-				"other_thing":"",
-				"other_branch":[]
-			}
-		]
-	}
-]
+{
+	"gitname":"codeforces",
+	"gitlog":[
+		{"name":"main",
+			"verson_tree":[
+				{"time":"08-02-2022-18:27",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"git create",
+					"name":"codeforces"
+				},
+				{"time":"08-02-2022-18:27",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"files add",
+					"add":[
+						"./1501B.cpp",
+						"./1538G.cpp",
+						"./1609B.cpp",
+						"./1610C.cpp",
+						"./1703G.cpp",
+						"./340173h.cpp",
+						"./342784A.cpp",
+						"./342784B.cpp",
+						"./342784C.cpp",
+						"./342784D.cpp",
+						"./342784E.cpp",
+						"./369768A - 6.cpp",
+						"./369768F.cpp",
+						"./369768I - 7.cpp",
+						"./369768I - 7_2.cpp",
+						"./369768L - 2.cpp",
+						"./369768P.cpp",
+						"./369768Q-2.cpp",
+						"./369768Q.cpp",
+						"./375463E.cpp",
+						"./391774a.cpp",
+						"./391774b.cpp",
+						"./391774c.cpp",
+						"./391774d.cpp",
+						"./391774e.cpp",
+						"./391774F.cpp",
+						"./391774F_0_1.cpp",
+						"./391774J.cpp",
+						"./git_log.json"
+					],
+					"remove":[],
+					"edit":[],
+					"other_thing":"",
+					"other_branch":[]
+				},
+				{"time":"08-04-2022-16:54",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"files add",
+					"add":[
+						"./345674A.cpp",
+						"./345674A-2.cpp"
+					],
+					"remove":[],
+					"edit":[],
+					"other_thing":"",
+					"other_branch":[]
+				},
+				{"time":"08-08-2022-08:38",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"files edit",
+					"add":[
+						"./1679B.cpp"
+					],
+					"remove":[],
+					"edit":[],
+					"other_thing":"",
+					"other_branch":[]
+				},
+				{"time":"08-12-2022-16:48",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"files edit",
+					"add":[
+						"./345674N.cpp"
+					],
+					"remove":[],
+					"edit":[],
+					"other_thing":"",
+					"other_branch":[]
+				},
+				{"time":"08-17-2022-08:49",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"files edit",
+					"add":[
+						"./209884B.cpp"
+					],
+					"remove":[],
+					"edit":[],
+					"other_thing":"",
+					"other_branch":[]
+				}
+			]
+		}
+	]
+}
