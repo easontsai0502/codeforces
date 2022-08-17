@@ -92,6 +92,7 @@ int main(){
 	int ans=1;
 	bool issolve=false;
 	solve(0,0);
+	/*debug*/cout<<"0,0\n===========\n";
 	for(int i=0;i<n*n;i++){
 		if(issolve){
 			break;
@@ -101,6 +102,7 @@ int main(){
 		while(needtodo--){
 			int nowx=(worklist.front()).first;
 			int nowy=(worklist.front()).second;
+			/*debug*/cout<<nowx<<','<<nowy<<"\n";
 			if(nowx==n-1 && nowy==n-1){
 				issolve=true;
 				break;
@@ -108,6 +110,7 @@ int main(){
 			solve(nowx,nowy);
 			worklist.pop_front();
 		}
+		/*debug*/cout<<"=================\n";
 	}
 	if(issolve){
 		cout<<ans;
