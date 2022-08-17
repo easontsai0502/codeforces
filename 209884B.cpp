@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/gRkn7bDfsN/contest/209884/problem/B
-[]
+[TLE]
 */
 #include<iostream>
 #include<vector>
