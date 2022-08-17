@@ -64,6 +64,16 @@ int main(){
 			cin>>numlist[i][j];
 		}
 	}
+	int ans=1;
+	solve(0,0);
+	while(true){
+		ans++;
+		int needtodo=worklist.size()
+		for(int i=0;i<needtodo;i++){
+			int nowx=(worklist.front()).first;
+			int nowy=(worklist.front()).second;
+		}
+	}
 	return 0;
 }
 /*
