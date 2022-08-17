@@ -96,15 +96,21 @@ int main(){
 	ios::sync_with_stdio(false);
     int n,m;
 	cin>>n>>m;
+	bool cansolve=true;
 	while(m--){
 		int a,b,c;
 		cin>>a>>b>>c;
+		if(count(inin[a].begin(),inin[a].end(),b)){
+			if(wl[{a,b}]!=c){
+				cansolve=false;
+				break;
+			}
+		}
 		inin[a].push_back(b);
 		inin[b].push_back(a);
 		wl[{a,b}]=c;
 		wl[{b,a}]=-c;
 	}
-	bool cansolve=true;
 	for(int i=0;i<n && cansolve;i++){
 		if(chentoi[i]){
 			continue;
