@@ -16,6 +16,15 @@ int n;
 int numlist[1001][1001];
 map<pii,pii> come;
 deque<pii> worklist;
+bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
+	if(numlist[x1][y1]>numlist[x2][y2] && numlist[x3][y3]>numlist[x2][y2]){
+		return true;
+	}else if(numlist[x1][y1]<numlist[x2][y2] && numlist[x3][y3]<numlist[x2][y2]){
+		return true;
+	}else{
+		return false;
+	}
+}
 void solve(int x=0,int y=0){
 	int backx=come[{x,y}].first;
 	int backy=come[{x,y}].second;
