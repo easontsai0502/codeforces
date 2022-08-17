@@ -37,44 +37,28 @@ void solve(int x=0,int y=0){
 		}else
 
 		if(x-1>=0 && x-1!=backx){
-			int nextbs=1;
-			if(numlist[x-1][y]>nownum){
-				bs=0;
-			}
-			if(nextbs==bs){
+			if(ifer(backx,backy,x,y,x-1,y)){
 				worklist.push_back({x-1,y});
 				come[{x-1,y}]={x,y};
 			}
 		}
 
 		if(y-1>=0 && y-1!=backy){
-			int nextbs=1;
-			if(numlist[x][y-1]>nownum){
-				bs=0;
-			}
-			if(nextbs==bs){
+			if(ifer(backx,backy,x,y,x,y-1)){
 				worklist.push_back({x,y-1});
 				come[{x,y-1}]={x,y};
 			}
 		}
 
 		if(x+1<n && x+1!=backx){
-			int nextbs=1;
-			if(numlist[x+1][y]>nownum){
-				bs=0;
-			}
-			if(nextbs==bs){
+			if(ifer(backx,backy,x,y,x+1,y)){
 				worklist.push_back({x+1,y});
 				come[{x+1,y}]={x,y};
 			}
 		}
 
 		if(y+1<n && y+1!=backy){
-			int nextbs=1;
-			if(numlist[x][y+1]>nownum){
-				bs=0;
-			}
-			if(nextbs==bs){
+			if(ifer(backx,backy,x,y,x,y+1)){
 				worklist.push_back({x,y+1});
 				come[{x,y+1}]={x,y};
 			}
