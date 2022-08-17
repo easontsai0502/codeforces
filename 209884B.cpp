@@ -16,8 +16,13 @@ int numlist[1001][1001];
 map<pii,pii> come;
 deque<pii> worklist;
 void solve(int x=0,int y=0){
+	int backx=come[{x,y}].first;
+	int backy=come[{x,y}].second;
+	int nownum=numlist[x][y];
+	int backnum=numlist[backx][backy];
 	if(x || y){
-
+		bool bs;	/*bs=true:下一個數值要比較小，反之*/
+		if(come[{x,y}])
 	}else{
 		worklist.push_back({x+1,y});
 		worklist.push_back({x,y+1});
