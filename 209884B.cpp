@@ -28,26 +28,46 @@ void solve(int x=0,int y=0){
 		}else{
 			bs=true;
 		}
+
 		if(x-1>=0 && x-1!=backx){
-			if(numlist[x-1][y]>nownum ^ bs){
+			bool nextbs=true;
+			if(numlist[x-1][y]>nownum){
+				bs=false;
+			}
+			if(nextbs==bs){
 				worklist.push_back({x-1,y});
 				come[{x-1,y}]={x,y};
 			}
 		}
+
 		if(y-1>=0 && y-1!=backy){
-			if(numlist[x-1][y]>nownum ^ bs){
+			bool nextbs=true;
+			if(numlist[x][y-1]>nownum){
+				bs=false;
+			}
+			if(nextbs==bs){
 				worklist.push_back({x,y-1});
 				come[{x,y-1}]={x,y};
 			}
 		}
+
 		if(x+1<n && x+1!=backx){
-			if(numlist[x-1][y]>nownum ^ bs){
+			bool nextbs=true;
+			if(numlist[x+1][y]>nownum){
+				bs=false;
+			}
+			if(nextbs==bs){
 				worklist.push_back({x+1,y});
 				come[{x+1,y}]={x,y};
 			}
 		}
+
 		if(y+1<n && y+1!=backy){
-			if(numlist[x-1][y]>nownum ^ bs){
+			bool nextbs=true;
+			if(numlist[x][y+1]>nownum){
+				bs=false;
+			}
+			if(nextbs==bs){
 				worklist.push_back({x,y+1});
 				come[{x,y+1}]={x,y};
 			}
