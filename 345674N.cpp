@@ -11,7 +11,8 @@ using namespace std;
 #define lli long long int
 #define pii pair<int,int>
 int chentoi[100001];
-map<int,pii> inin;
+map<int,vector<int> > inin;
+map<pii,int> wl;
 int pssr(int a,int b){/*猜拳結果機*/
 	/*
 	[a,b]
@@ -68,6 +69,19 @@ int pss(int a,int re){/*猜拳製造機*/
 		return a;
 	}
 }
+bool solve(int p,int ou){
+	for(int i:inin[p]){
+		if(chentoi[i]){
+			if()
+		}
+	}
+}
+
+
+
+
+
+
 int main(){
 	cin.tie(0);
 	cout.tie(0);
