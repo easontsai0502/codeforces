@@ -22,17 +22,15 @@ void solve(int x=0,int y=0){
 	int nownum=numlist[x][y];
 	int backnum=numlist[backx][backy];
 	if((x || y)){
-		bool bs;	/*bs=true:下一個數值要比較小，反之*/
+		int bs=1;	/*bs=1:下一個數值要比較小，反之*/
 		if(backnum>nownum){
-			bs=false;
-		}else{
-			bs=true;
-		}
+			bs=0;
+		}else
 
 		if(x-1>=0 && x-1!=backx){
-			bool nextbs=true;
+			int nextbs=1;
 			if(numlist[x-1][y]>nownum){
-				bs=false;
+				bs=0;
 			}
 			if(nextbs==bs){
 				worklist.push_back({x-1,y});
@@ -41,9 +39,9 @@ void solve(int x=0,int y=0){
 		}
 
 		if(y-1>=0 && y-1!=backy){
-			bool nextbs=true;
+			int nextbs=1;
 			if(numlist[x][y-1]>nownum){
-				bs=false;
+				bs=0;
 			}
 			if(nextbs==bs){
 				worklist.push_back({x,y-1});
@@ -52,9 +50,9 @@ void solve(int x=0,int y=0){
 		}
 
 		if(x+1<n && x+1!=backx){
-			bool nextbs=true;
+			int nextbs=1;
 			if(numlist[x+1][y]>nownum){
-				bs=false;
+				bs=0;
 			}
 			if(nextbs==bs){
 				worklist.push_back({x+1,y});
@@ -63,9 +61,9 @@ void solve(int x=0,int y=0){
 		}
 
 		if(y+1<n && y+1!=backy){
-			bool nextbs=true;
+			int nextbs=1;
 			if(numlist[x][y+1]>nownum){
-				bs=false;
+				bs=0;
 			}
 			if(nextbs==bs){
 				worklist.push_back({x,y+1});
