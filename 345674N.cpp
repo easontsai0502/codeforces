@@ -13,6 +13,7 @@ using namespace std;
 int chentoi[100001];
 map<int,vector<int> > inin;
 map<pii,int> wl;
+int psscount[4];
 int pssr(int a,int b){/*猜拳結果機*/
 	/*
 	[a,b]
@@ -70,23 +71,52 @@ int pss(int a,int re){/*猜拳製造機*/
 	}
 }
 bool solve(int p,int ou){
+	chentoi[p]=ou;
+	psscount[ou]++;
+	bool re=true;
 	for(int i:inin[p]){
-		if(chentoi[i]){
-			if()
+		if(re){
+			if(chentoi[i]){
+				if(pssr(chentoi[p],chentoi[i])!=wl[{p,i}]){
+					return false;
+				}
+			}else{
+				solve(i,pss(ou,wl[{p,i}]));
+			}
+		}
+		else{
+			break;
 		}
 	}
+	return re;
 }
-
-
-
-
-
-
 int main(){
 	cin.tie(0);
 	cout.tie(0);
 	ios::sync_with_stdio(false);
-    
+    int n,m;
+	cin>>n>>m;
+	while(m--){
+		int a,b,c;
+		cin>>a>>b>>c;
+		inin[a].push_back(b);
+		inin[b].push_back(a);
+		wl[{a,b}]=c;
+		wl[{b,a}]=-c;
+	}
+	bool cansolve=true;
+	for(int i=0;i<n && cansolve;i++){
+		if(chentoi[i]){
+			continue;
+		}else{
+			cansolve=solve(i,1);
+		}
+	}
+	if(cansolve){
+		cout<<min(psscount[1],min(psscount[2],psscount[3]));
+	}else{
+		cout<<"-1";
+	}
 	return 0;
 }
 /*
