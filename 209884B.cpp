@@ -1,10 +1,12 @@
 /*
 [Q]https://codeforces.com/group/gRkn7bDfsN/contest/209884/problem/B
+[]
 */
 #include<iostream>
 #include<vector>
 #include<cmath>
 #include<algorithm>
+#include<deque>
 using namespace std;
 #define lli long long int
 #define ulli unsigned long long int
@@ -12,8 +14,13 @@ using namespace std;
 int n;
 int numlist[1001][1001];
 map<pii,pii> come;
-void solve(){
+deque<pii> worklist;
+void solve(int x=0,int y=0){
+	if(x || y){
 
+	}else{
+		
+	}
 }
 int main(){
     cin.tie(0);
