@@ -75,7 +75,7 @@ void debuger(int x,auto y,auto z){
     for(int i=0;i<x;i++){
         cout<<' ';
     }
-	cout<<y<<'\n'<<z<<"\n";
+	cout<<y<<','<<z<<"\n";
 }
 int floor;
 bool solve(int p,int ou){
