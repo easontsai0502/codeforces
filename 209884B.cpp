@@ -65,16 +65,26 @@ int main(){
 		}
 	}
 	int ans=1;
+	bool issolve=false;
 	solve(0,0);
-	while(true){
+	for(int i=0;i<n*n;i++){
 		ans++;
 		int needtodo=worklist.size()
 		for(int i=0;i<needtodo;i++){
 			int nowx=(worklist.front()).first;
 			int nowy=(worklist.front()).second;
+			if(nowx==n-1 && nowy==n-1){
+				issolve=true;
+				break;
+			}
 			solve(nowx,nowy);
 			worklist.pop_front();
 		}
+	}
+	if(issolve){
+		cout<<ans;
+	}else{
+		cout<<"-1";
 	}
 	return 0;
 }
