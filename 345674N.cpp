@@ -9,7 +9,9 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-int chentoi[100001]
+#define pii pair<int,int>
+int chentoi[100001];
+map<int,pii> inin;
 int pssr(int a,int b){/*猜拳結果機*/
 	/*
 	[a,b]
