@@ -81,7 +81,7 @@ int floorcount;
 bool solve(int p,int ou){
 	floorcount++;
 	chentoi[p]=ou;
-	debuger(floorcount,p,ou);
+	//debuger(floorcount,p,ou);
 	psscount[ou]++;
 	bool re=true;
 	for(int i:inin[p]){
