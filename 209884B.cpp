@@ -19,7 +19,8 @@ void solve(int x=0,int y=0){
 	if(x || y){
 
 	}else{
-		
+		worklist.push_back({x+1,y});
+		worklist.push_back({x,y+1});
 	}
 }
 int main(){
