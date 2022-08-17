@@ -22,7 +22,31 @@ void solve(int x=0,int y=0){
 	int backnum=numlist[backx][backy];
 	if(x || y){
 		bool bs;	/*bs=true:下一個數值要比較小，反之*/
-		if(come[{x,y}])
+		if(backnum>nownum){
+			bs=false;
+		}else{
+			bs=true;
+		}
+		if(x-1>=0){
+			if(numlist[x-1][y]>nownum ^^ bs){
+				worklist.push_back({x-1,y});
+			}
+		}
+		if(y-1>=0){
+			if(numlist[x-1][y]>nownum ^^ bs){
+
+			}
+		}
+		if(x+1<n){
+			if(numlist[x-1][y]>nownum ^^ bs){
+
+			}
+		}
+		if(y+1<n){
+			if(numlist[x-1][y]>nownum ^^ bs){
+
+			}
+		}
 	}else{
 		worklist.push_back({x+1,y});
 		worklist.push_back({x,y+1});
