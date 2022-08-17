@@ -9,7 +9,8 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-int pss(int a,int b){/*猜拳結果機*/
+int chentoi[100001]
+int pssr(int a,int b){/*猜拳結果機*/
 	/*
 	[a,b]
 	1=剪刀
