@@ -3,25 +3,31 @@
 [TLE 8]
 [sample ans]http://dreamoon4.blogspot.com/2016/11/13.html
 */
+
 #include<iostream>
 #include<vector>
 #include<cmath>
 #include<algorithm>
 #include<deque>
 #include<map>
+
 using namespace std;
+
 #define lli long long int
 #define ulli unsigned long long int
 #define pii pair<int,int>
-int n;
-int numlist[1001][1001];
-deque<pointer> worklist;
+
 struct pointer{
 	int x;
 	int y;
 	int backx;
 	int backy;
 };
+
+int n;
+int numlist[1001][1001];
+deque<pointer> worklist;
+
 bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
 	if(numlist[x1][y1]>numlist[x2][y2] && numlist[x3][y3]>numlist[x2][y2]){
 		return true;
@@ -31,6 +37,7 @@ bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
 		return false;
 	}
 }
+
 bool solve(pointer indata){
 	int x=indata.x;
 	int y=indata.y;
@@ -97,6 +104,7 @@ bool solve(pointer indata){
 	}
 	return false;
 }
+
 int main(){
     cin.tie(0);
     cout.tie(0);
@@ -132,6 +140,7 @@ int main(){
 	}
 	return 0;
 }
+
 /*
 [I1]
 2
