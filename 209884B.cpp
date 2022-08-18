@@ -120,7 +120,7 @@ int main(){
 	pointer original;
 	original.x=0;
 	original.y=0;
-	solve(0,0);
+	solve(original);
 	ulli maxruntime=n*n;
 	while(maxruntime--){
 		if(issolve){
