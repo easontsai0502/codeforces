@@ -130,7 +130,7 @@ int main(){
 		int needtodo=worklist.size();
 		while(needtodo--){
 			if(issolve)break;
-			issolve=solve(worklist_front());
+			issolve=solve(worklist.front());
 			worklist.pop_front();
 		}
 	}
