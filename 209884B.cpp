@@ -17,6 +17,11 @@ int n;
 int numlist[1001][1001];
 map<pii,pii> come;
 deque<pii> worklist;
+struct pointer{
+	int x;
+	int y;
+	int am; /*如果*/
+};
 bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
 	if(numlist[x1][y1]>numlist[x2][y2] && numlist[x3][y3]>numlist[x2][y2]){
 		return true;
@@ -26,39 +31,32 @@ bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
 		return false;
 	}
 }
-void solve(int x=0,int y=0){
+bool solve(int x=0,int y=0){
+	if(x==n-1 && y==n-1)return true;
 	int backx=come[{x,y}].first;
 	int backy=come[{x,y}].second;
 	int nownum=numlist[x][y];
 	int backnum=numlist[backx][backy];
 	if((x || y)){
-		int bs=1;	/*bs=1:下一個數值要比較小，反之*/
-		if(backnum>nownum){
-			bs=0;
-		}else
-
-		if(x-1>=0 && x-1!=backx){
+		if(x-1>=0 && x-1!=backx){//left
 			if(ifer(backx,backy,x,y,x-1,y)){
 				worklist.push_back({x-1,y});
 				come[{x-1,y}]={x,y};
 			}
 		}
-
-		if(y-1>=0 && y-1!=backy){
+		if(y-1>=0 && y-1!=backy){//up
 			if(ifer(backx,backy,x,y,x,y-1)){
 				worklist.push_back({x,y-1});
 				come[{x,y-1}]={x,y};
 			}
 		}
-
-		if(x+1<n && x+1!=backx){
+		if(x+1<n && x+1!=backx){//rig
 			if(ifer(backx,backy,x,y,x+1,y)){
 				worklist.push_back({x+1,y});
 				come[{x+1,y}]={x,y};
 			}
 		}
-
-		if(y+1<n && y+1!=backy){
+		if(y+1<n && y+1!=backy){//dow
 			if(ifer(backx,backy,x,y,x,y+1)){
 				worklist.push_back({x,y+1});
 				come[{x,y+1}]={x,y};
@@ -70,6 +68,7 @@ void solve(int x=0,int y=0){
 		come[{x+1,y}]={0,0};
 		come[{x,y+1}]={0,0};
 	}
+	return false;
 }
 int main(){
     cin.tie(0);
@@ -84,20 +83,17 @@ int main(){
 	int ans=1;
 	bool issolve=false;
 	solve(0,0);
-	for(int i=0;i<n*n;i++){
+	while(true){
 		if(issolve){
 			break;
 		}
 		ans++;
 		int needtodo=worklist.size();
 		while(needtodo--){
+			if(issolve)break;
 			int nowx=(worklist.front()).first;
 			int nowy=(worklist.front()).second;
-			if(nowx==n-1 && nowy==n-1){
-				issolve=true;
-				break;
-			}
-			solve(nowx,nowy);
+			issolve=solve(nowx,nowy);
 			worklist.pop_front();
 		}
 	}
