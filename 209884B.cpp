@@ -117,6 +117,9 @@ int main(){
 	}
 	int ans=1;
 	bool issolve=false;
+	pointer original;
+	original.x=0;
+	original.y=0;
 	solve(0,0);
 	ulli maxruntime=n*n;
 	while(maxruntime--){
@@ -127,9 +130,7 @@ int main(){
 		int needtodo=worklist.size();
 		while(needtodo--){
 			if(issolve)break;
-			int nowx=(worklist.front()).first;
-			int nowy=(worklist.front()).second;
-			issolve=solve(nowx,nowy);
+			issolve=solve(worklist_front());
 			worklist.pop_front();
 		}
 	}
