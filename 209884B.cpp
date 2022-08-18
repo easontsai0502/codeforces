@@ -32,9 +32,58 @@ bool ifer(int x1,int y1,int x2,int y2,int x3,int y3){
 	}
 }
 bool solve(pointer indata){
+	int x=indata.x;
+	int y=indata.y;
 	if(x==n-1 && y==n-1)return true;
 	if(indata.x || indata.y){
-
+		if(x>0){/*x--*/
+			if(x-1!=pointer.backx){
+				if(ifer(pointer.backx,pointer.backy,x,y,x-1,y)){
+					pointer nextpoint;
+					nextpoint.x=x-1;
+					nextpoint.y=y;
+					nextpoint.backx=x;
+					nextpoint.backy=y;
+					worklist.push_back(nextpoint);
+				}
+			}
+		}
+		if(y>0){/*y--*/
+			if(y-1!=pointer.backy){
+				if(ifer(pointer.backx,pointer.backy,x,y,x,y-1)){
+					pointer nextpoint;
+					nextpoint.x=x;
+					nextpoint.y=y-1;
+					nextpoint.backx=x;
+					nextpoint.backy=y;
+					worklist.push_back(nextpoint);
+				}
+			}
+		}
+		if(x<n-1){/*x++*/
+			if(x+1!=pointer.backx){
+				if(ifer(pointer.backx,pointer.backy,x,y,x+1,y)){
+					pointer nextpoint;
+					nextpoint.x=x+1;
+					nextpoint.y=y;
+					nextpoint.backx=x;
+					nextpoint.backy=y;
+					worklist.push_back(nextpoint);
+				}
+			}
+		}
+		if(y<n-1){/*y++*/
+			if(y+1!=pointer.backx){
+				if(ifer(pointer.backx,pointer.backy,x,y,x,y+1)){
+					pointer nextpoint;
+					nextpoint.x=x;
+					nextpoint.y=y+1;
+					nextpoint.backx=x;
+					nextpoint.backy=y;
+					worklist.push_back(nextpoint);
+				}
+			}
+		}
 	}else{
 		pointer nextpoint;
 		nextpoint.x=1;
