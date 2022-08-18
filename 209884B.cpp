@@ -37,8 +37,8 @@ bool solve(pointer indata){
 	if(x==n-1 && y==n-1)return true;
 	if(indata.x || indata.y){
 		if(x>0){/*x--*/
-			if(x-1!=pointer.backx){
-				if(ifer(pointer.backx,pointer.backy,x,y,x-1,y)){
+			if(x-1!=(pointer.backx)){
+				if(ifer((pointer.backx),(pointer.backy),x,y,x-1,y)){
 					pointer nextpoint;
 					nextpoint.x=x-1;
 					nextpoint.y=y;
@@ -49,8 +49,8 @@ bool solve(pointer indata){
 			}
 		}
 		if(y>0){/*y--*/
-			if(y-1!=pointer.backy){
-				if(ifer(pointer.backx,pointer.backy,x,y,x,y-1)){
+			if(y-1!=(pointer.backy)){
+				if(ifer((pointer.backx),(pointer.backy),x,y,x,y-1)){
 					pointer nextpoint;
 					nextpoint.x=x;
 					nextpoint.y=y-1;
@@ -61,8 +61,8 @@ bool solve(pointer indata){
 			}
 		}
 		if(x<n-1){/*x++*/
-			if(x+1!=pointer.backx){
-				if(ifer(pointer.backx,pointer.backy,x,y,x+1,y)){
+			if(x+1!=(pointer.backx)){
+				if(ifer((pointer.backx),(pointer.backy),x,y,x+1,y)){
 					pointer nextpoint;
 					nextpoint.x=x+1;
 					nextpoint.y=y;
@@ -73,8 +73,8 @@ bool solve(pointer indata){
 			}
 		}
 		if(y<n-1){/*y++*/
-			if(y+1!=pointer.backx){
-				if(ifer(pointer.backx,pointer.backy,x,y,x,y+1)){
+			if(y+1!=((pointer.backy))){
+				if(ifer((pointer.backx),(pointer.backy),x,y,x,y+1)){
 					pointer nextpoint;
 					nextpoint.x=x;
 					nextpoint.y=y+1;
