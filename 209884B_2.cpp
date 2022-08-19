@@ -79,9 +79,19 @@ int main(){
 			if(mapnum[nx][ny]>mapnum[tx][ty] && (tarr-1)){
 				if(step[nx][ny][1])continue;
 				step[nx][ny][1]=step[tx][ty][0]+1;
+				taskebar nexttask;
+				nexttask.x=nx;
+				nexttask.y=ny;
+				nexttask.arr=1;
+				worklist.push_back(nexttask);
 			}else if(mapnum[nx][ny]<mapnum[tx][ty] && (tarr)){
 				if(step[nx][ny][0])continue;
 				step[nx][ny][0]=step[tx][ty][1]+1;
+				taskebar nexttask;
+				nexttask.x=nx;
+				nexttask.y=ny;
+				nexttask.arr=0;
+				worklist.push_back(nexttask);
 			}
 		}
 	}
