@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/iTpKFww7Hn/contest/345674/problem/N
-[]
+[WA 26]
 */
 #include<iostream>
 #include<vector>
