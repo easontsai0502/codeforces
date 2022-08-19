@@ -27,15 +27,15 @@ struct taskebar{
 };
 
 /*num*/
-const int maxn=100000
+const int maxn=100000;
 int step[maxn+1][maxn+1][2];
-int movex={0,1,0,-1};
-int movey={1,0,-1,0};
+const int movex[]={0,1,0,-1};
+const int movey[]={1,0,-1,0};
 int n;
 int mapnum[maxn+1][maxn+1];
 
 /*fn*/
-bool out(int x,int y){return (x<0 || y<0 || x>=n || y>=n);}
+bool Out(int x,int y){return x<0||y<0||x>=n||y>=n;}
 
 /*定義*/
 /*
@@ -64,7 +64,7 @@ int main(){
 	step[0][0][1]=1;
 	while(worklist.size()){
 		taskebar thistask=worklist.front();
-		worklist.pop();
+		worklist.pop_front();
 		int tx=thistask.x;
 		int ty=thistask.y;
 		int tarr=thistask.arr;
@@ -73,13 +73,13 @@ int main(){
 			return 0;
 		}
 		for(int i=0;i<4;i++){
-			int nx=x+movex[i];
-			int ny=y+movey[i];
-			if(out(nx,ny))continue;
-			if(mapnum[nx][ny]>mapnum[x][y] && (tarr-1)){
+			int nx=tx+movex[i];
+			int ny=ty+movey[i];
+			if(Out(nx,ny))continue;
+			if(mapnum[nx][ny]>mapnum[tx][ty] && (tarr-1)){
 				if(step[nx][ny][1])continue;
 				step[nx][ny][1]=step[tx][ty][0]+1;
-			}else if(mapnum[nx][ny]<mapnum[x][y] && (tarr)){
+			}else if(mapnum[nx][ny]<mapnum[tx][ty] && (tarr)){
 				if(step[nx][ny][0])continue;
 				step[nx][ny][0]=step[tx][ty][1]+1;
 			}
