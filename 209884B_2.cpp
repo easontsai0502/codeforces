@@ -74,7 +74,10 @@ int main(){
 			int nx=x+movex[i];
 			int ny=y+movey[i];
 			if(out(nx,ny))continue;
-			
+			if(mapnum[nx][ny]>mapnum[x][y] && (arr-1)){
+				if(step[nx][ny][1])continue;
+				step[nx][ny][1]=
+			}
 		}
 	}
 	cout<<"-1";
