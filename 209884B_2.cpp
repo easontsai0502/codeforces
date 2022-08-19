@@ -75,7 +75,7 @@ int main(){
 		for(int i=0;i<4;i++){
 			int nx=tx+movex[i];
 			int ny=ty+movey[i];
-			if(Out(nx,ny))continue;
+			if(nx<0 || ny<0 || nx>=n || ny>=n)continue;
 			if(mapnum[nx][ny]>mapnum[tx][ty] && (tarr-1)){
 				if(step[nx][ny][1])continue;
 				step[nx][ny][1]=step[tx][ty][0]+1;
