@@ -14,6 +14,7 @@ using namespace std;
 int chentoi[100001];
 map<lli,vector<lli> > inin;
 map<pii,int> wl;
+int anspsscount[4];
 int psscount[4];
 int pssr(int a,int b){/*猜拳結果機*/
 	/*
@@ -131,9 +132,22 @@ int main(){
 		}else{
 			cansolve=solve(i,1);
 		}
+		if(psscount[0]<=psscount[1] && psscount[0]<=psscount[2]){
+			anspsscount[0]=psscount[0];
+			anspsscount[1]=psscount[1];
+			anspsscount[2]=psscount[2];
+		}else if(psscount[1]<=psscount[0] && psscount[0]<=psscount[2]){
+			anspsscount[0]=psscount[1];
+			anspsscount[1]=psscount[2];
+			anspsscount[2]=psscount[0];
+		}else{
+			anspsscount[0]=psscount[2];
+			anspsscount[1]=psscount[0];
+			anspsscount[2]=psscount[1];
+		}
 	}
 	if(cansolve){
-		cout<<min(psscount[1],min(psscount[2],psscount[3]));
+		cout<<min(anspsscount[1],min(anspsscount[2],anspsscount[3]));
 	}else{
 		cout<<"-1";
 	}
