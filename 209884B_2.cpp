@@ -27,7 +27,7 @@ struct taskebar{
 };
 
 /*num*/
-const int maxn=100000;
+const int maxn=1000;
 int step[maxn+1][maxn+1][2];
 const int movex[]={0,1,0,-1};
 const int movey[]={1,0,-1,0};
