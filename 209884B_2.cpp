@@ -60,6 +60,8 @@ int main(){
 	worklist.push_back(st);
 	st.arr=1;
 	worklist.push_back(st);
+	step[0][0][0]=1;
+	step[0][0][1]=1;
 	while(worklist.size()){
 		taskebar thistask=worklist.front();
 		worklist.pop();
@@ -74,9 +76,12 @@ int main(){
 			int nx=x+movex[i];
 			int ny=y+movey[i];
 			if(out(nx,ny))continue;
-			if(mapnum[nx][ny]>mapnum[x][y] && (arr-1)){
+			if(mapnum[nx][ny]>mapnum[x][y] && (tarr-1)){
 				if(step[nx][ny][1])continue;
-				step[nx][ny][1]=
+				step[nx][ny][1]=step[tx][ty][0]+1;
+			}else if(mapnum[nx][ny]<mapnum[x][y] && (tarr)){
+				if(step[nx][ny][0])continue;
+				step[nx][ny][0]=step[tx][ty][1]+1;
 			}
 		}
 	}
