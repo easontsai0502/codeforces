@@ -35,7 +35,6 @@ int n;
 int mapnum[maxn+1][maxn+1];
 
 /*fn*/
-bool Out(int x,int y){return x<0||y<0||x>=n||y>=n;}
 
 /*定義*/
 /*
@@ -62,6 +61,7 @@ int main(){
 	worklist.push_back(st);
 	step[0][0][0]=1;
 	step[0][0][1]=1;
+	int ans=-1;
 	while(worklist.size()){
 		taskebar thistask=worklist.front();
 		worklist.pop_front();
@@ -69,8 +69,8 @@ int main(){
 		int ty=thistask.y;
 		int tarr=thistask.arr;
 		if(tx==n-1 && ty==n-1){
-			cout<<step[tx][ty][tarr];
-			return 0;
+			ans=step[tx][ty][tarr];
+			break;
 		}
 		for(int i=0;i<4;i++){
 			int nx=tx+movex[i];
@@ -85,7 +85,7 @@ int main(){
 			}
 		}
 	}
-	cout<<"-1";
+	cout<<ans;
 	return 0;
 }
 
