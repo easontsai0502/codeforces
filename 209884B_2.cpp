@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/gRkn7bDfsN/contest/209884/problem/B
-[TLE 8]
+[]
 [sample ans]http://dreamoon4.blogspot.com/2016/11/13.html
 */
 
@@ -20,10 +20,24 @@ using namespace std;
 #define pii pair<int,int>
 
 /*fn*/
+bool out(int x,int y){return (x<0 || y<0 || x>=n || y>=n);}
 
+/*num*/
+const int maxn=100000
+int step[maxn+1][maxn+1][2];
+int movex={0,1,0,-1};
+int movey={1,0,-1,0};
+int n;
+int mapnum[maxn+1][maxn+1];
 
+/*main*/
 int main(){
-	
+	cin>>n;
+	for(int i=0;i<n;i++){
+		for(int i=0;i<n;i++){
+			
+		}
+	}
 	return 0;
 }
 
