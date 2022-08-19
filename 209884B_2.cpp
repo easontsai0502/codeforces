@@ -19,8 +19,12 @@ using namespace std;
 #define ulli unsigned long long int
 #define pii pair<int,int>
 
-/*fn*/
-bool out(int x,int y){return (x<0 || y<0 || x>=n || y>=n);}
+/*struct*/
+struct taskebar{
+	int x;
+	int y;
+	int arr;
+};
 
 /*num*/
 const int maxn=100000
@@ -30,14 +34,50 @@ int movey={1,0,-1,0};
 int n;
 int mapnum[maxn+1][maxn+1];
 
+/*fn*/
+bool out(int x,int y){return (x<0 || y<0 || x>=n || y>=n);}
+
+/*定義*/
+/*
+arr=0:下一個要比較大
+arr=1:下一個要比較小
+*/
+
 /*main*/
 int main(){
 	cin>>n;
 	for(int i=0;i<n;i++){
-		for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			cin>>mapnum[i][j];
+		}
+	}
+	deque<taskebar>worklist;
+	taskebar st;
+	/*新增第一個工作*/
+	st.x=0;
+	st.y=0;
+	st.arr=0;
+	worklist.push_back(st);
+	st.arr=1;
+	worklist.push_back(st);
+	while(worklist.size()){
+		taskebar thistask=worklist.front();
+		worklist.pop();
+		int tx=thistask.x;
+		int ty=thistask.y;
+		int tarr=thistask.arr;
+		if(tx==n-1 && ty==n-1){
+			cout<<step[tx][ty][tarr];
+			return 0;
+		}
+		for(int i=0;i<4;i++){
+			int nx=x+movex[i];
+			int ny=y+movey[i];
+			if(out(nx,ny))continue;
 			
 		}
 	}
+	cout<<"-1";
 	return 0;
 }
 
