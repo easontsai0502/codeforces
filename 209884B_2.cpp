@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/gRkn7bDfsN/contest/209884/problem/B
-[]
+[AC]
 [sample ans]http://dreamoon4.blogspot.com/2016/11/13.html
 */
 
