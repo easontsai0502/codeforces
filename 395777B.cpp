@@ -50,9 +50,6 @@ int main(){
 		}else if(t==2){
 			if(xlist.count(x)){
 				xlist[x]--;
-				if(xlist[x]==0){
-					xlist.erase(x);
-				}
 			}
 		}else{
 			if(xlist.count(x)){
