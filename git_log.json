@@ -120,7 +120,10 @@
 					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
 					"do":"files edit",
 					"add":[
-						"./395777A.cpp"
+						"./395777A.cpp",
+						"./395777B.cpp",
+						"./395777C.cpp",
+						"./395777D.cpp"
 					],
 					"remove":[],
 					"other_thing":"",
