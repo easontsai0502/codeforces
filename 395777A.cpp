@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/gym/395777/problem/0
-[]
+[AC]
 */
 
 /*include*/
@@ -36,20 +36,54 @@ UINT ansk;
 
 /*fn*/
 void solve(){
-	UINT codeinsize=codein.size();
 	UINT nowans=0;
-	for(UINT i=0;i<codeinsize;i++){
-		string nowline=codein[i];
-		UINT nowlinesize=nowline.size();
+	bool findl=false;
+	UINT l=0;
+	deque<UINT> forr;
+	string nowline;
+	while(cin>>nowline){
 
+		UINT nowlinesize=nowline.size();
+		for(UINT j=0;j<nowlinesize;j++){
+		    if(j!=nowlinesize-2){
+    			if(nowline[j]=='f'){
+    				if(nowline[j+1]=='o'){
+    					if(nowline[j+2]=='r'){
+    						j+=2;
+    						nowans++;
+    						ansk=max(ansk,nowans);
+    						findl=true;
+    					}
+    				}
+    			}
+		    }
+			if(nowline[j]=='{'){
+				l++;
+				if(findl){
+					forr.push_back(l);
+					findl=false;
+				}
+			}
+			if(nowline[j]=='}'){
+				if(forr.size()){
+					if(forr.back()==l){
+						forr.pop_back();
+						nowans--;
+					}
+				}
+				l--;
+			}
+			//*debug*/cout<<findl<<","<<ansk<<","<<l<<","<<j<<"\n";
+		}
 	}
 }
 
 /*main*/
 int main(){
-	while(getline(cin,str)){
-		codein.push_back(str);
-	}
+	cin.tie(0);
+	cout.tie(0);
+	ios::sync_with_stdio(false);
+	ansk==0;
 	solve();
 	if(ansk==0){
 		cout<<"Theta(1)";
