@@ -24,7 +24,7 @@ using namespace std;
 #define pii pair<int,int>
 #define plli pair<lli,lli>
 #define pulli pair<ulli,ulli>
-#define INT int
+#define INT lli
 #define UINT unsigned INT
 
 /*struct*/
@@ -35,6 +35,9 @@ using namespace std;
 
 /*main*/
 int main(){
+	cin.tie(0);
+	cout.tie(0);
+	ios::sync_with_stdio(false);
 	map<INT,INT> xlist;
 	int q;
 	cin>>q;
@@ -42,17 +45,17 @@ int main(){
 		int t,x;
 		cin>>t>>x;
 		if(t==1){
-			if(xlist.count(x)){
+			if(xlist[x]){
 				xlist[x]++;
 			}else{
 				xlist[x]=1;
 			}
 		}else if(t==2){
-			if(xlist.count(x)){
+			if(xlist[x]){
 				xlist[x]--;
 			}
 		}else{
-			if(xlist.count(x)){
+			if(xlist[x]){
 				cout<<xlist[x]<<"\n";
 			}else{
 				cout<<"0\n";
@@ -69,5 +72,4 @@ int main(){
 
 /*think*/
 /*
-
 */
