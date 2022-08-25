@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/gym/395777/problem/B
-[]
+[AC]
 */
 
 /*include*/
