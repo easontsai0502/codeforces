@@ -119,7 +119,7 @@
 				{"time":"08-25-2022-14:10",
 					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
 					"do":"files edit",
-					"add":[
+					"add":[  
 						"./395777A.cpp",
 						"./395777B.cpp",
 						"./395777C.cpp",
