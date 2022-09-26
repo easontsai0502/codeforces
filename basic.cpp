@@ -44,12 +44,8 @@ int main(){
 		cout.tie(0);
 		ios::sync_with_stdio(false);
 	}
-	{/*CIN*/
-
-	}
-	{/*solve*/
-
-	}
+	/*CIN*/
+	/*solve*/
 	return 0;
 }
 
