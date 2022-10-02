@@ -1,5 +1,6 @@
 /*
 [Q]https://codeforces.com/problemset/problem/1501/B
+[AC]
 */
 #include<iostream>
 #include<vector>
