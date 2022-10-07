@@ -47,14 +47,40 @@ int main(){
 	INT n,q;
 	cin>>n>>q;
 	vector<PII> road;
-	for(INT i=0;i<n;i++){
-		PII a;
-		cin>>a.first>>a.second;
-		road.push_back(a);
+	PII orig;
+	orig.first=0;
+	orig.second=0;
+	road.push_back(orig);
+	INT a[n+1],b[n+1];
+	for(INT i=1;i<=n;i++){
+		cin>>a[i];
+	}
+	for(INT i=1;i<=n;i++){
+		cin>>b[i];
+	}
+	for(INT i=1;i<=n;i++){
+		orig.first=a[i];
+		orig.second=b[i];
+		road.push_back(orig);
 	}
 	sort(road.begin(),road.end());
 	INT roadlong[n+1];
 	INT getcandy[n+1];
+	for(INT i=1;i<=n;i++){
+		roadlong[i]=roadlong[i-1]+road[i].first;
+		getcandy[i]=getcandy[i-1]+road[i].second;
+	}
+	while(q--){
+		INT x;
+		cin>>x;
+		INT i=0;
+		INT ans=0;
+		for(INT j=1;j<=n;j++){
+			while(i<j && roadlong[j]-roadlong[i]<=x)i++;
+			ans=max(ans,getcandy[j]-getcandy[i]);
+		}
+		cout<<ans<<"\n";
+	}
 	return 0;
 }
 
