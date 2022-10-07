@@ -3,7 +3,7 @@
 //200%不用請我麥當勞
 /*
 [Q]https://codeforces.com/group/VEc3guEDmO/contest/400975/problem/E
-[]
+[100/200]
 */
 
 /*include*/
@@ -41,8 +41,11 @@ using namespace std;
 /*fn定義*/
 INT numup(INT a,INT b){
 	if(b==0){
-		return 1;
-	}else return numup(a,b-1)*a;
+		if(a>0) return 1;
+		else return -1;
+	}
+	else if(b==1) return a;
+	else return numup(a,b-1)*a;
 }
 /*main*/
 int main(){
@@ -63,20 +66,22 @@ int main(){
 		down=-1e9;
 		up=-2;
 	}
-	down-1;
+	down-=1;
 	int dotime=35;
 	while(dotime--){
 		if(abs(up-down)<=1){
 			cout<<"! "<<up<<"\n";//fflush(stdout);
+			break;
+		}else{
+			INT ask=(up+down)/2;
+			cout<<"? "<<ask<<"\n";//fflush(stdout);
+			INT respond;
+			cin>>respond;
+			INT newup=numup(ask,respond);
+			INT newdown=newup/ask;
+			down=max(down,newdown);
+			up=min(up,newup);
 		}
-		INT ask=(up+down)/2;
-		cout<<"? "<<ask<<"\n";//fflush(stdout);
-		INT respond;
-		cin>>respond;
-		INT newup=numup(ask,respond);
-		INT newdown=newup/ask;
-		down=max(down,newdown);
-		up=min(up,newup);
 	}
 	/*solve*/
 	return 0;
