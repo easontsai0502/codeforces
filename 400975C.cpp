@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/VEc3guEDmO/contest/400975/problem/C
-[100%]
+[100/100]
 */
 
 /*include*/
