@@ -51,6 +51,7 @@ int main(){
 	for(INT i=0;i<n;i++){
 		cin>>a[i];
 	}
+	/*solve*/
 	INT ans=0;
 	INT anscount=0;
 	bool undo=true;
@@ -80,7 +81,6 @@ int main(){
 	}
 	//*debug*/cout<<"\n";
 	cout<<ans<<" "<<anscount;
-	/*solve*/
 	return 0;
 }
 
