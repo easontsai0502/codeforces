@@ -175,6 +175,22 @@
 					"remove": [],
 					"other_thing": "",
 					"other_branch": []
+				},
+				{
+					"time":"10-07-2022-20:40",
+					"by":{
+						"name":"ET01",
+						"mail":"kagariet01@outlook.com"
+					},
+					"do":"files edit",
+					"add":[
+						"./400975A.cpp",
+						"./400975B.cpp",
+						"./400975C.cpp",
+						"./400975D.cpp",
+						"./400975E.cpp"
+
+					]
 				}
 			]
 		}
