@@ -1,6 +1,6 @@
 /*
-[Q]
-[]
+[Q]https://codeforces.com/group/VEc3guEDmO/contest/400975/problem/D
+[012]
 */
 
 /*include*/
