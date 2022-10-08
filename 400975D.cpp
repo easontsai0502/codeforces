@@ -60,25 +60,25 @@ int main(){
 		for(INT k=i+2;k<n;k++){
 			if(k-1!=j){
 				if(a[k-1]<a[j]){j=k-1;adder=1;}
-				else if(a[k-1]=a[j])adder++;
+				else if(a[k-1]==a[j])adder++;
 			}
 			INT now=a[i]-a[j]+a[k];
 			if(undo){
 				ans=now;
 				anscount=1;
 				undo=false;
-				/*debug*/cout<<"\n";cout<<ans<<" "<<i<<","<<j<<","<<k<<" ";
+				//*debug*/cout<<"\n";cout<<ans<<" "<<i<<","<<j<<","<<k<<" ";
 			}else if(ans<now){
 				ans=now;
 				anscount=1;
-				/*debug*/cout<<"\n";cout<<ans<<" "<<i<<","<<j<<","<<k<<" ";
+				//*debug*/cout<<"\n";cout<<ans<<" "<<i<<","<<j<<","<<k<<" ";
 			}else if(ans==now){
 				anscount+=adder;
-				/*debug*/cout<<i<<","<<j<<","<<k<<" ";
+				//*debug*/cout<<i<<","<<j<<","<<k<<" ";
 			}
 		}
 	}
-	/*debug*/cout<<"\n";
+	//*debug*/cout<<"\n";
 	cout<<ans<<" "<<anscount;
 	/*solve*/
 	return 0;
@@ -86,6 +86,8 @@ int main(){
 
 /*
 [I1]
+10
+8 1 6 7 5 8 1 7 2 9
 [O1]
 */
 
