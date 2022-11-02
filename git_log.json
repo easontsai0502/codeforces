@@ -191,6 +191,34 @@
 						"./400975E.cpp"
 
 					]
+				},
+				{
+					"time": "11-02-2022-10:05",
+					"by": {
+						"name": "ET01",
+						"mail": "kagariet01@outlook.com"
+					},
+					"do": "files edit",
+					"add":[
+						"./406993/A.cpp",
+						"codeforces/406993/B.cpp",
+						"codeforces/406993/basic.cpp",
+						"codeforces/406993/C-2.cpp",
+						"codeforces/406993/C.cpp",
+						"codeforces/406993/D.cpp",
+						"codeforces/406993/E.cpp",
+						"codeforces/406993/F.cpp",
+						"codeforces/406993/G.cpp",
+						"codeforces/406993/H-2.cpp",
+						"codeforces/406993/H-3.cpp",
+						"codeforces/406993/H-4.cpp",
+						"codeforces/406993/H-5.cpp",
+						"codeforces/406993/H-6.cpp",
+						"codeforces/406993/H.cpp",
+						"codeforces/406993/test.cpp"
+					],
+					"edit": [
+					]
 				}
 			]
 		}
