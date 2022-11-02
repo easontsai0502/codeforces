@@ -2,6 +2,7 @@
 [zj]		[Q]https://zerojudge.tw/ShowProblem?problemid= [題目編號]
 [tioj]	[Q]https://tioj.ck.tp.edu.tw/problems/ [題目編號]
 [cses]	[Q]https://cses.fi/problemset/task/ [題目編號]
+[cf]		[Q]https://codeforces.com/group/VEc3guEDmO/contest/406993/problem/G
 [AC]
 */
 
