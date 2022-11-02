@@ -2,10 +2,9 @@
 [zj]		[Q]https://zerojudge.tw/ShowProblem?problemid= [題目編號]
 [tioj]	[Q]https://tioj.ck.tp.edu.tw/problems/ [題目編號]
 [cses]	[Q]https://cses.fi/problemset/task/ [題目編號]
-[cf]		[Q]https://codeforces.com/group/VEc3guEDmO/contest/406993/problem/H
 []
 */
- 
+
 /*include*/
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("O2")
@@ -21,10 +20,10 @@
 #include<deque>
 #include<map>
 #include<set>
- 
+
 /*using namespace*/
 using namespace std;
- 
+
 /*define type*/
 #define what_the_fuck cin.tie(0);cout.tie(0);ios::sync_with_stdio(false)
 #define ULLI unsigned long long int
@@ -35,7 +34,7 @@ using namespace std;
 #define PUIUI pair<UINT,UINT>
 #define endl "\n"
 #define wassomething() empty()==false
- 
+
 /*struct*/
 struct super_pair{
 	INT x1=0;
@@ -47,59 +46,45 @@ struct super_pair{
 /*fn宣告*/
 /*num*/
 bool debug=false;
-bool iofast=true;
+bool iofast=false;
 /*fn定義*/
 /*main*/
 int main(){
 	/*IO加速*/
 	if(!debug&&iofast)what_the_fuck;
 	/*CIN*/
-	INT ll,rr,x,y,k;
-	cin>>ll>>rr>>x>>y>>k;
-	bool canit=false;
+	INT n;
+	cin>>n;
 	/*solve*/
-	for(INT i=x;i<=y;i++){
-		INT mxnum=0;
-		INT l=ll/i;
-		INT r=rr/i;
-		l--;
-		//r++;
-		while(true){
-			INT mnt=(l+r)/2;
-			INT nownum=mnt;
-			if(nownum<ll){
-				l++;
-				continue;
-			}else if(rr<nownum){
-				r++;
-				continue;
-			}
-			mxnum=max(mxnum,nownum);
-			//cerr<<nownum<<endl;
-			if(k==nownum){
-				canit=true;
-				break;
-			}else if(nownum<k){
-				l=mnt;
-			}else{
-				r=mnt;
-			}
-			if((r-l)<=1)break;
-		}
-		if(canit)break;
-		if(mxnum<k)break;
+	INT allrun=0;
+	INT p=1;
+	for(INT i=0;i<n;i++){
+		allrun|=p;
+		p<<=1;
 	}
-	if(canit)cout<<"YES"<<endl;
-	else cout<<"NO"<<endl;
+	for(INT i=0;i<allrun;i++){//2分枚舉
+		p=1;
+		INT nownum=0;
+		for(INT j=0;j<n;j++){
+			INT nowbit=i&p;
+			if(nowbit){
+				cout<<"1";
+			}else{
+				cout<<"0";
+			}
+			p<<=1;
+		}
+		cout<<endl;
+	}
 	return 0;
 }
- 
+
 /*
 [I1]
 [O1]
 */
- 
+
 /*think*/
 /*
- 
+
 */
