@@ -233,6 +233,21 @@
 					],
 					"edit": [
 					]
+				},
+				{
+					"time": "11-09-2022-15:08",
+					"by": {
+						"name": "ET01",
+						"mail": "kagariet01@outlook.com"
+					},
+					"do": "files edit",
+					"add":[
+						"codeforces/342784B-2.cpp",
+						"codeforces/342784B-3.cpp",
+						"codeforces/342784C-2.cpp"
+					],
+					"edit": [
+					]
 				}
 			]
 		}
