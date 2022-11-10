@@ -1,8 +1,5 @@
 /*
-[zj]			[Q]https://zerojudge.tw/ShowProblem?problemid= [題目編號]
-[tioj]		[Q]https://tioj.ck.tp.edu.tw/problems/ [題目編號]
-[cses]		[Q]https://cses.fi/problemset/task/ [題目編號]
-[vjudge]	[Q]https://vjudge.net/problem/ [題目編號]
+[Q]https://codeforces.com/group/iTpKFww7Hn/contest/342784/problem/C
 []
 */
 
@@ -53,8 +50,35 @@ bool iofast=true;
 int main(){
 	/*IO加速*/
 	if(!debug&&iofast)what_the_fuck;
-	/*CIN*/
-	/*solve*/
+	INT q;
+	cin>>q;
+	while(q--){
+		/*CIN*/
+		INT n;
+		cin>>n;
+		PII a[n];
+		INT ans[n];
+		for(INT i=0;i<n;i++){
+			cin>>a[i].first;
+			a[i].second=i;;
+		}
+		/*solve*/
+		sort(a,a+n);
+		INT it=1;
+		INT lastnum=a[0].first;
+		for(INT i=0;i<n;i++){
+			if(lastnum!=a[i].first){
+				lastnum=a[i].first;
+				it++;
+			}
+			ans[a[i].second]=it;
+		}
+		for(INT i=0;i<n;i++){
+			if(i)cout<<" ";
+			cout<<ans[i];
+		}
+		if(q)cout<<endl;
+	}
 	return 0;
 }
 
