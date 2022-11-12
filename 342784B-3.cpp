@@ -1,6 +1,6 @@
 /*
 [Q]https://codeforces.com/group/iTpKFww7Hn/contest/342784/problem/B
-[WA]
+[AC]
 */
 
 /*include*/
@@ -43,7 +43,7 @@ struct super_pair{
 };
 /*fn宣告*/
 /*num*/
-bool debug=true;
+bool debug=false;
 bool iofast=true;
 /*fn定義*/
 /*main*/
@@ -68,7 +68,13 @@ int main(){
 	INT ans=0;
 	for(INT i=0,j;i<n;i=j){
 		j=i+1;
-		while(j<n&&(b[i]==b[j]||c[i]==c[j]))j++;
+		while(j<n&&(b[i]==b[j]))j++;
+		INT num=j-i;
+		ans+=num*(num-1);
+	}
+	for(INT i=0,j;i<n;i=j){
+		j=i+1;
+		while(j<n&&(c[i]==c[j]))j++;
 		INT num=j-i;
 		ans+=num*(num-1);
 	}

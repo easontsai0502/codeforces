@@ -250,6 +250,20 @@
 					]
 				},
 				{
+					"time": "11-10-2022-19:20",
+					"by": {
+						"name": "ET01",
+						"mail": "kagariet01@outlook.com"
+					},
+					"do": "files edit",
+					"add":[
+						"codeforces/342784B-3.cpp",
+						"codeforces/342784C-2.cpp"
+					],
+					"edit": [
+					]
+				},
+				{
 					"time": "11-12-2022-09:31",
 					"by": {
 						"name": "ET01",
