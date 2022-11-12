@@ -248,6 +248,19 @@
 					],
 					"edit": [
 					]
+				},
+				{
+					"time": "11-12-2022-09:31",
+					"by": {
+						"name": "ET01",
+						"mail": "kagariet01@outlook.com"
+					},
+					"do": "files edit",
+					"add":[
+						"codeforces/1520D.cpp"
+					],
+					"edit": [
+					]
 				}
 			]
 		}
