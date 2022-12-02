@@ -45,32 +45,30 @@ bool debug=false;
 bool iofast=true;
 const INT mxn=200000;
 INT m,n;
-vector<INT> tree[mxn+1];
-INT a[mxn+1];
-INT lt[mxn+1];
-INT mx[mxn+1];
-INT mxp=0;
-INT mxnum=0;
+INT a[mxn+1];//點資料
+/*並查集*/INT lt[mxn+1];//並查集資料
+INT mxl[mxn+1];//mxl[i]表編號i的樹的最大值
+INT mxpl[mxn+1];//mxl[i]表編號i的樹的最大值的位置
+INT mxp=0;//表整份點資料的最大值
+INT mxnum=0;//表整份點資料的最大值的位置
 /*fn定義*/
-PII mp(INT first,INT second){
-	PII a={first,second};
-	return a;
-}
-void lt_clear(){
+
+/*並查集*/void lt_clear(){
 	for(INT i=0;i<size(lt);i++){
 		lt[i]=i;
 	}
 }
-INT lt_find(INT a){
+/*並查集*/INT lt_find(INT a){
 	if(lt[a]==a)return a;
 	else return lt[a]=lt_find(lt[a]);
 }
-INT lt_link(INT a,INT b){
+/*並查集*/INT lt_link(INT a,INT b){
 	return lt[lt_find(a)]=lt_find(b);
 }
-bool lt_check(INT a,INT b){
+/*並查集*/bool lt_check(INT a,INT b){
 	return lt_find(a)==lt_find(b);
 }
+
 /*main*/
 int main(){
 	/*IO加速*/
@@ -81,26 +79,30 @@ int main(){
 	cin>>n>>m;
 	for(INT i=1;i<=n;i++){
 		cin>>a[i];
-		mxnum=max(mxnum,a[i]);
+		if(mxnum<a[i]){
+			mxnum=a[i];
+			mxp=i;//記錄所有資料中最大節點的編號
+		}
 	}
 	INT x,y;
-	for(INT i=0;i<m;i++){
+	for(INT i=0;i<m;i++){//建立樹
 		cin>>x>>y;
-		tree[x].push_back(y);
-		tree[y].push_back(x);
 		lt_link(x,y);
 	}
 	/*solve*/
+	set<INT>se;
 	for(INT i=1;i<=n;i++){
-		INT ltf=lt_find(i);
-		mx[ltf]=max(mx[ltf],a[i]);
+		INT ltf=lt_find(i);//樹編號
+		se.insert(ltf);//將樹編號加入se(沒有x)，方便後面輸出
+		if(mxl[ltf]<a[i]){
+			mxpl[ltf]=i;//紀錄該棵樹的最大節點的編號
+			mxl[ltf]=a[i];
+		}
 	}
-	INT ans=0-mxnum;
-	for(INT i=1;i<=n;i++){
-		ans+=mx[i];
+	INT aaaaa=lt_find(mxp);//找出節點mxp的老大
+	for(INT i:se){
+		if(i!=aaaaa)cout<<mxpl[i]<<" "<<mxp<<endl;
 	}
-	ans+=mxnum*(n-m-1);
-	cout<<ans<<endl;
 	return 0;
 }
 
