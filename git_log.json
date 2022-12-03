@@ -242,9 +242,9 @@
 					},
 					"do": "files edit",
 					"add":[
-						"codeforces/342784B-2.cpp",
-						"codeforces/342784B-3.cpp",
-						"codeforces/342784C-2.cpp"
+						"./342784B-2.cpp",
+						"./342784B-3.cpp",
+						"./342784C-2.cpp"
 					],
 					"edit": [
 					]
@@ -257,8 +257,8 @@
 					},
 					"do": "files edit",
 					"add":[
-						"codeforces/342784B-3.cpp",
-						"codeforces/342784C-2.cpp"
+						"./342784B-3.cpp",
+						"./342784C-2.cpp"
 					],
 					"edit": [
 					]
@@ -271,7 +271,26 @@
 					},
 					"do": "files edit",
 					"add":[
-						"codeforces/1520D.cpp"
+						"./1520D.cpp"
+					],
+					"edit": [
+					]
+				},
+				{
+					"time": "12-03-2022-15:46",
+					"by": {
+						"name": "ET01",
+						"mail": "kagariet01@outlook.com"
+					},
+					"do": "files edit",
+					"add":[
+						"codeforces/411569/a-2.cpp",
+						"codeforces/411569/a.cpp",
+						"codeforces/411569/b-2.cpp",
+						"codeforces/411569/b.cpp",
+						"codeforces/411569/c.cpp",
+						"codeforces/411569/d.cpp",
+						"codeforces/411569/e.cpp"
 					],
 					"edit": [
 					]
